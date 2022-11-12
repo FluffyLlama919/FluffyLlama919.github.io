@@ -1,5 +1,5 @@
 {
-  "name": "cs1300-development",
+  "name": "mymusicbox",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
