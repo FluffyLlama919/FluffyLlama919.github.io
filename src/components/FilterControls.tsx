@@ -27,7 +27,7 @@ function FilterControls({
           <Form.Select
             aria-label="Filter by artist"
             value={filterArtist}
-            onChange={(e) => setFilterArtist(e.target.value)}
+            onChange={(e) => setFilterArtist(e.target.value as FirstLetter)}
           >
             <option value="all">All</option>
             <option value="A-F">A-F</option>
@@ -41,7 +41,7 @@ function FilterControls({
           <Form.Select
             aria-label="Filter by song"
             value={filterSong}
-            onChange={(e) => setFilterSong(e.target.value)}
+            onChange={(e) => setFilterSong(e.target.value as FirstLetter)}
           >
             <option value="all">All</option>
             <option value="A-F">A-F</option>
@@ -55,7 +55,7 @@ function FilterControls({
           <Form.Select
             aria-label="Sort by"
             value={sort}
-            onChange={(e) => setSort(e.target.value)}
+            onChange={(e) => setSort(e.target.value as Sort)}
           >
             <option value="alphabetical by artist">
               Alphabetical by artist
