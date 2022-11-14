@@ -134,8 +134,8 @@ function App() {
                 setPlaylist={setPlaylist}
               />
             </Col>
-            <Col xs={12} md={3} className="text-center">
-              <h2>Playlist</h2>
+            <Col xs={12} md={3}>
+              <h2 className="text-center">Playlist</h2>
               <Playlist songs={filteredPlaylist} setSongs={setPlaylist} />
             </Col>
           </Row>
