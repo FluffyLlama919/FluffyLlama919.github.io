@@ -25,6 +25,8 @@ Components:
   - Takes in props of the filtered songs in the playlist and the setPlaylist function to remove songs from the playlist.
 - SongCard
   - Takes in props of the song, a function for the onClick handler, and the label for the button.
+- AggregatedData
+  - Takes in props of the songs in the filtered playlist.
 
 #### Note the usability principles considered for layout and hierarchy
 

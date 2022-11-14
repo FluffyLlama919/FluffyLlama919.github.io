@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import AggregatedData from "./components/AggregatedData";
 import Charts from "./components/Charts";
 import FilterControls from "./components/FilterControls";
 import Navbar from "./components/Navbar";
@@ -128,6 +129,9 @@ function App() {
           <Row>
             <Col xs={12} md={9} className="text-center">
               <h2>Charts</h2>
+              {filteredSongs.length === 0 && (
+                <p>(No songs match current filters)</p>
+              )}
               <Charts
                 songs={filteredSongs}
                 playlist={playlist}
@@ -136,6 +140,18 @@ function App() {
             </Col>
             <Col xs={12} md={3}>
               <h2 className="text-center">Playlist</h2>
+              {playlist.length === 0 ? (
+                <p className="text-center">(No songs in playlist)</p>
+              ) : (
+                filteredPlaylist.length === 0 && (
+                  <p className="text-center">
+                    (No songs in playlist match current filters)
+                  </p>
+                )
+              )}
+              {filteredPlaylist.length > 0 && (
+                <AggregatedData songs={filteredPlaylist} />
+              )}
               <Playlist songs={filteredPlaylist} setSongs={setPlaylist} />
             </Col>
           </Row>

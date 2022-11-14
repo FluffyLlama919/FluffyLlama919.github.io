@@ -13,30 +13,33 @@ function fmtNum(num: string) {
 
 function SongCard({ song, onClick, label }: Props) {
   return (
-    <Card className="h-100">
-      <Card.Body>
-        <a
-          href={song.url}
-          target="_blank"
-          rel="noreferrer"
-          className="text-dark"
-        >
-          <Card.Title>{song.name}</Card.Title>
-        </a>
+    <Card className="h-100" bg="light">
+      <Card.Body className="d-flex flex-column justify-content-between">
         <Card.Text>
+          <a
+            href={song.url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-dark"
+          >
+            <Card.Title>{song.name}</Card.Title>
+          </a>
           <strong>Artist:</strong> {song.artist.name}
           <br />
           <strong>Listeners:</strong> {fmtNum(song.listeners)}
           <br />
           <strong>Play Count:</strong> {fmtNum(song.playcount)}
           <br />
-          <Button
-            onClick={() => onClick(song)}
-            variant={label === "+" ? "success" : "danger"}
-          >
-            {label}
-          </Button>
         </Card.Text>
+        <Button
+          onClick={() => onClick(song)}
+          variant={label === "+" ? "success" : "danger"}
+          size="sm"
+          className="align-self-center"
+          style={{ width: "40px" }}
+        >
+          {label}
+        </Button>
       </Card.Body>
     </Card>
   );
